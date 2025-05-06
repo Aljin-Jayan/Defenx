@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Defacement Monitor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 15px;
+      width: 350px;
+      margin: 0;
+    }
+    
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #eaeaea;
+      padding-bottom: 10px;
+    }
+    
+    .header img {
+      width: 32px;
+      height: 32px;
+      margin-right: 10px;
+    }
+    
+    .header h1 {
+      font-size: 18px;
+      margin: 0;
+      color: #333;
+    }
+    
+    .status-indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 8px;
+    }
+    
+    .status-ok {
+      background-color: #4CAF50;
+    }
+    
+    .status-warning {
+      background-color: #FF9800;
+    }
+    
+    .status-error {
+      background-color: #F44336;
+    }
+    
+    .status-unknown {
+      background-color: #9E9E9E;
+    }
+    
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 12px;
+      margin-left: 10px;
+      background-color: #f1f1f1;
+    }
+    
+    .action-buttons {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+    
+    button {
+      background-color: #630000;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 12px;
+      cursor: pointer;
+      flex: 1;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    button:hover {
+      background-color: #630000;
+    }
+    
+    button:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+    
+    button.secondary {
+      background-color: #f1f1f1;
+      color: #333;
+    }
+    
+    button.secondary:hover {
+      background-color: #e1e1e1;
+    }
+    
+    button.danger {
+      background-color: #F44336;
+    }
+    
+    button.danger:hover {
+      background-color: #d32f2f;
+    }
+    
+    .response-container {
+      background-color: #f9f9f9;
+      border: 1px solid #eaeaea;
+      border-radius: 4px;
+      padding: 10px;
+      margin-top: 15px;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    
+    #response {
+      white-space: pre-wrap;
+      font-family: monospace;
+      font-size: 12px;
+      margin: 0;
+    }
+    
+    .site-info {
+      margin-bottom: 15px;
+    }
+    
+    .info-row {
+      display: flex;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+    
+    .info-label {
+      font-weight: bold;
+      width: 120px;
+    }
+    
+    .info-value {
+      flex: 1;
+    }
+    
+    .spinner {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: spin 1s ease-in-out infinite;
+      margin-right: 8px;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid #eaeaea;
+      margin-bottom: 15px;
+    }
+    
+    .tab {
+      padding: 8px 12px;
+      cursor: pointer;
+      font-size: 14px;
+      border-bottom: 2px solid transparent;
+    }
+    
+    .tab.active {
+      border-bottom-color: #630000;
+      color: #630000;
+    }
+    
+    .tab-content {
+      display: none;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+    
+    .settings-group {
+      margin-bottom: 15px;
+    }
+    
+    .settings-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+    
+    .settings-group input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    .toggle-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+    }
+    
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    
+    .toggle-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 20px;
+    }
+    
+    .toggle-slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    
+    input:checked + .toggle-slider {
+      background-color: #630000;
+    }
+    
+    input:checked + .toggle-slider:before {
+      transform: translateX(20px);
+    }
+    
+    .alert-box {
+      background-color: #FFF3E0;
+      border-left: 4px solid #FF9800;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 2px;
+    }
+    
+    .alert-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .alert-title svg {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="icon.png" alt="Logo">
+    <h1>DEFENX</h1>
+  </div>
+  
+  <div class="tabs">
+    <div class="tab active" data-tab="monitor">Monitor</div>
+    <div class="tab" data-tab="status">Status</div>
+    <div class="tab" data-tab="settings">Settings</div>
+  </div>
+  
+  <div id="monitor-tab" class="tab-content active">
+    <div class="site-info">
+      <div class="info-row">
+        <div class="info-label">Current URL:</div>
+        <div class="info-value" id="current-url">Loading...</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">Status:</div>
+        <div class="info-value">
+          <span id="status-text">Unknown</span>
+          <span class="status-badge">
+            <span id="status-indicator" class="status-indicator status-unknown"></span>
+            <span id="status-badge-text">Not monitored</span>
+          </span>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">Last checked:</div>
+        <div class="info-value" id="last-checked">Never</div>
+      </div>
+    </div>
+    
+    <div class="action-buttons">
+      <button id="initialize-btn">Start Monitoring</button>
+      <button id="check-btn" disabled>Check Now</button>
+    </div>
+    
+    <div id="alert-container" style="display: none;"></div>
+    
+    <div class="response-container">
+      <pre id="response">Ready to monitor this website for defacement.</pre>
+    </div>
+  </div>
+  
+  <div id="status-tab" class="tab-content">
+    <div id="monitored-sites">Loading monitored websites...</div>
+    
+    <div class="action-buttons">
+      <button id="refresh-status-btn">Refresh Status</button>
+    </div>
+  </div>
+  
+  <div id="settings-tab" class="tab-content">
+    <div class="settings-group">
+      <label for="api-url">API URL:</label>
+      <input type="text" id="api-url" placeholder="http://127.0.0.1:8000">
+    </div>
+    
+    <div class="settings-group">
+      <label for="check-frequency">Check Frequency (minutes):</label>
+      <input type="number" id="check-frequency" min="5" max="1440" value="60">
+    </div>
+    
+    <div class="settings-group">
+      <label for="similarity-threshold">Similarity Threshold (0.0-1.0):</label>
+      <input type="number" id="similarity-threshold" min="0.5" max="1.0" step="0.01" value="0.95">
+    </div>
+    
+    <div class="toggle-container">
+      <span>Take screenshots for visual comparison</span>
+      <label class="toggle-switch">
+        <input type="checkbox" id="take-screenshots" checked>
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+    
+    <div class="toggle-container">
+      <span>Send email notifications</span>
+      <label class="toggle-switch">
+        <input type="checkbox" id="send-notifications" checked>
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+    
+    <div class="action-buttons">
+      <button id="save-settings-btn">Save Settings</button>
+      <button id="reset-settings-btn" class="secondary">Reset</button>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

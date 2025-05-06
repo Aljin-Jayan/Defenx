@@ -1,0 +1,143 @@
+2025-03-24 10:17:59,213 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\https_www.example.com__1742791655.png
+2025-03-24 10:24:04,186 - defacement_detector - ERROR - Error capturing screenshot for https://www.icet.ac.in/: Message: timeout: Timed out receiving message from renderer: 10.000
+  (Session info: chrome-headless-shell=124.0.6367.91)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6EF4F1522+60802]
+	(No symbol) [0x00007FF6EF46AC22]
+	(No symbol) [0x00007FF6EF327CE4]
+	(No symbol) [0x00007FF6EF310FE1]
+	(No symbol) [0x00007FF6EF310D42]
+	(No symbol) [0x00007FF6EF30EBE4]
+	(No symbol) [0x00007FF6EF30F3FF]
+	(No symbol) [0x00007FF6EF335C31]
+	(No symbol) [0x00007FF6EF3C91C3]
+	(No symbol) [0x00007FF6EF39AB7A]
+	(No symbol) [0x00007FF6EF3BA224]
+	(No symbol) [0x00007FF6EF39A923]
+	(No symbol) [0x00007FF6EF368FEC]
+	(No symbol) [0x00007FF6EF369C21]
+	GetHandleVerifier [0x00007FF6EF7F41BD+3217949]
+	GetHandleVerifier [0x00007FF6EF836157+3488183]
+	GetHandleVerifier [0x00007FF6EF82F0DF+3459391]
+	GetHandleVerifier [0x00007FF6EF5AB8E6+823622]
+	(No symbol) [0x00007FF6EF475FBF]
+	(No symbol) [0x00007FF6EF470EE4]
+	(No symbol) [0x00007FF6EF471072]
+	(No symbol) [0x00007FF6EF4618C4]
+	BaseThreadInitThunk [0x00007FFAD916259D+29]
+	RtlUserThreadStart [0x00007FFADB28AF38+40]
+
+2025-03-24 11:14:58,043 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\https_www.example.com__1742795086.png
+2025-03-24 11:17:11,085 - defacement_detector - ERROR - Error capturing screenshot for https://www.icet.ac.in/: Message: timeout: Timed out receiving message from renderer: 10.000
+  (Session info: chrome-headless-shell=124.0.6367.91)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6D6E31522+60802]
+	(No symbol) [0x00007FF6D6DAAC22]
+	(No symbol) [0x00007FF6D6C67CE4]
+	(No symbol) [0x00007FF6D6C50FE1]
+	(No symbol) [0x00007FF6D6C50D42]
+	(No symbol) [0x00007FF6D6C4EBE4]
+	(No symbol) [0x00007FF6D6C4F3FF]
+	(No symbol) [0x00007FF6D6C75C31]
+	(No symbol) [0x00007FF6D6D091C3]
+	(No symbol) [0x00007FF6D6CDAB7A]
+	(No symbol) [0x00007FF6D6CFA224]
+	(No symbol) [0x00007FF6D6CDA923]
+	(No symbol) [0x00007FF6D6CA8FEC]
+	(No symbol) [0x00007FF6D6CA9C21]
+	GetHandleVerifier [0x00007FF6D71341BD+3217949]
+	GetHandleVerifier [0x00007FF6D7176157+3488183]
+	GetHandleVerifier [0x00007FF6D716F0DF+3459391]
+	GetHandleVerifier [0x00007FF6D6EEB8E6+823622]
+	(No symbol) [0x00007FF6D6DB5FBF]
+	(No symbol) [0x00007FF6D6DB0EE4]
+	(No symbol) [0x00007FF6D6DB1072]
+	(No symbol) [0x00007FF6D6DA18C4]
+	BaseThreadInitThunk [0x00007FFBB52E259D+29]
+	RtlUserThreadStart [0x00007FFBB70AAF38+40]
+
+2025-03-24 12:07:16,303 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\https_www.icet.ac.in__1742798215.png
+2025-03-24 12:07:50,710 - defacement_detector - ERROR - Error fetching https://www.icet.ac.in/: ("Connection broken: ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)", ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2025-03-24 12:07:50,714 - defacement_detector - ERROR - Error fetching HTML for https://www.icet.ac.in/: 404: Error fetching URL: ("Connection broken: ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)", ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2025-03-24 12:30:46,457 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\https_www.icet.ac.in__1742799629.png
+2025-03-24 12:30:51,183 - defacement_detector - ERROR - Error comparing images: The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 0
+2025-03-24 12:31:00,056 - defacement_detector - ERROR - Error sending email notification: (554, b'5.7.1 Message rejected under suspicion of SPAM; https://ya.cc/1IrBc 1742799893-j4Igf0uLmiE0-x34eNjHZ')
+2025-03-24 13:23:19,365 - defacement_detector - ERROR - Error fetching https://www.icet.ac.in/: HTTPSConnectionPool(host='www.icet.ac.in', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020EEAE99850>: Failed to resolve 'www.icet.ac.in' ([Errno 11001] getaddrinfo failed)"))
+2025-03-24 13:23:19,367 - defacement_detector - ERROR - Error fetching HTML for https://www.icet.ac.in/: 404: Error fetching URL: HTTPSConnectionPool(host='www.icet.ac.in', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020EEAE99850>: Failed to resolve 'www.icet.ac.in' ([Errno 11001] getaddrinfo failed)"))
+2025-03-24 13:58:15,553 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\https_www.icet.ac.in__1742804874.png
+2025-03-24 14:00:49,486 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\https_www.amazon.in_?&tag=googhydrabk1-21&ref=pd_sl_5szpgfto9i_e&adgrpid=155259813593&hvpone=&hvptwo=&hvadid=674893540034&hvpos=&hvnetw=g&hvrand=963044139297908613&hvqmt=e&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9040212&hvtargid=kwd-64107830&hydadcr=14452_2316413&gad_source=1_1742805036.png
+2025-03-28 08:51:08,406 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\https_www.icet.ac.in__1743132048.png
+2025-04-01 00:52:54,248 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\http_127.0.0.1_3000_index.html#_1743448956.png
+2025-04-01 00:53:54,058 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\http_127.0.0.1_3000_index.html#_1743449022.png
+2025-04-01 00:53:58,790 - defacement_detector - ERROR - Error comparing images: The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 0
+2025-04-01 00:55:10,553 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\http_127.0.0.1_3000_index.html#_1743449101.png
+2025-04-01 00:55:14,985 - defacement_detector - ERROR - Error comparing images: The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 0
+2025-04-01 00:55:43,202 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\http_127.0.0.1_3000_index.html#_1743449134.png
+2025-04-01 00:55:47,570 - defacement_detector - ERROR - Error comparing images: The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 0
+2025-04-01 00:55:56,038 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\http_127.0.0.1_3000_index.html#_1743449147.png
+2025-04-01 00:56:00,435 - defacement_detector - ERROR - Error comparing images: The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 0
+2025-04-01 00:56:04,261 - defacement_detector - ERROR - Error sending email notification: (554, b'5.7.1 Message rejected under suspicion of SPAM; https://ya.cc/1IrBc 1743449400-wTbO2rBlBCg0-7h9cb7Ux')
+2025-04-01 00:56:29,102 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\http_127.0.0.1_3000_index.html#_1743449177.png
+2025-04-01 00:56:33,465 - defacement_detector - ERROR - Error comparing images: The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 0
+2025-04-01 00:56:37,765 - defacement_detector - ERROR - Error sending email notification: (554, b'5.7.1 Message rejected under suspicion of SPAM; https://ya.cc/1IrBc 1743449434-VUbDIrBZ3Ko0-zHD07tAk')
+2025-04-01 01:05:32,549 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\http_127.0.0.1_3000_index.html#_1743449723.png
+2025-04-01 01:05:37,050 - defacement_detector - ERROR - Error comparing images: The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 0
+2025-04-01 01:05:58,141 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\http_127.0.0.1_3000_index.html#_1743449748.png
+2025-04-01 01:06:02,516 - defacement_detector - ERROR - Error comparing images: The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 0
+2025-04-01 01:06:50,646 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\http_127.0.0.1_3000_index.html#_1743449801.png
+2025-04-01 01:06:55,095 - defacement_detector - ERROR - Error comparing images: The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 0
+2025-04-01 01:08:02,160 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\http_127.0.0.1_3000_index.html#_1743449870.png
+2025-04-01 01:08:06,542 - defacement_detector - ERROR - Error comparing images: The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 0
+2025-04-01 01:08:51,041 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\http_127.0.0.1_3000_index.html#_1743449921.png
+2025-04-01 01:08:55,576 - defacement_detector - ERROR - Error comparing images: The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 0
+2025-04-01 01:09:19,527 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\http_127.0.0.1_3000_index.html#_1743449948.png
+2025-04-01 01:09:23,951 - defacement_detector - ERROR - Error comparing images: The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 0
+2025-04-01 01:10:35,833 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\http_127.0.0.1_3000_index.html_1743450025.png
+2025-04-01 01:11:17,360 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\http_127.0.0.1_3000_index.html_1743450068.png
+2025-04-01 01:11:21,806 - defacement_detector - ERROR - Error comparing images: The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 0
+2025-04-01 01:11:25,303 - defacement_detector - ERROR - Error sending email notification: (554, b'5.7.1 Message rejected under suspicion of SPAM; https://ya.cc/1IrBc 1743450322-JjblgDpLlGk0-WmGOr1Uc')
+2025-04-01 01:17:15,997 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\http_127.0.0.1_3000_index.html_1743450424.png
+2025-04-01 01:18:50,955 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\http_127.0.0.1_3000_index.html_1743450521.png
+2025-04-01 01:18:55,414 - defacement_detector - ERROR - Error comparing images: The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 0
+2025-04-01 01:18:59,050 - defacement_detector - INFO - Email notification sent for http://127.0.0.1:3000/index.html
+2025-04-01 01:20:29,635 - defacement_detector - ERROR - Error fetching http://127.0.0.1:3000/index.html: HTTPConnectionPool(host='127.0.0.1', port=3000): Max retries exceeded with url: /index.html (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000021629678370>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-04-01 01:20:29,635 - defacement_detector - ERROR - Error fetching HTML for http://127.0.0.1:3000/index.html: 404: Error fetching URL: HTTPConnectionPool(host='127.0.0.1', port=3000): Max retries exceeded with url: /index.html (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000021629678370>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-04-01 01:20:41,639 - defacement_detector - ERROR - Error fetching http://127.0.0.1:3000/index.html: HTTPConnectionPool(host='127.0.0.1', port=3000): Max retries exceeded with url: /index.html (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000216296A7040>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-04-01 01:20:41,639 - defacement_detector - ERROR - Error fetching HTML for http://127.0.0.1:3000/index.html: 404: Error fetching URL: HTTPConnectionPool(host='127.0.0.1', port=3000): Max retries exceeded with url: /index.html (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000216296A7040>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-04-01 13:20:14,228 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\http_127.0.0.1_3000_index.html_1743493797.png
+2025-04-01 13:20:44,821 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\http_127.0.0.1_3000_index.html_1743493835.png
+2025-04-01 13:20:49,552 - defacement_detector - ERROR - Error comparing images: The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 0
+2025-04-01 13:20:55,535 - defacement_detector - INFO - Email notification sent for http://127.0.0.1:3000/index.html
+2025-04-08 21:33:47,016 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\https_www.icet.ac.in__1744128189.png
+2025-04-08 21:53:53,887 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\https_www.icet.ac.in__1744128743.png
+2025-04-08 21:53:54,586 - defacement_detector - ERROR - Error comparing images: The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 0
+2025-04-08 21:53:56,915 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\https_www.icet.ac.in__1744129410.png
+2025-04-08 21:53:57,291 - defacement_detector - ERROR - Error comparing images: The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 0
+2025-04-08 21:54:00,186 - defacement_detector - INFO - Email notification sent for https://www.icet.ac.in/
+2025-04-08 21:55:43,035 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\https_www.icet.ac.in_home_1744129426.png
+2025-04-08 22:06:47,940 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\https_www.icet.ac.in_home_1744129534.png
+2025-04-08 22:06:48,302 - defacement_detector - ERROR - Error comparing images: The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 0
+2025-04-08 22:06:52,940 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\https_www.icet.ac.in_home_1744130177.png
+2025-04-08 22:07:13,890 - defacement_detector - ERROR - Error comparing images: The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 0
+2025-04-09 12:08:11,793 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\https_www.icet.ac.in__1744180668.png
+2025-04-09 12:10:06,564 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\https_www.icet.ac.in__1744180795.png
+2025-04-09 12:10:11,380 - defacement_detector - ERROR - Error comparing images: The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 0
+2025-04-09 12:10:14,889 - defacement_detector - INFO - Email notification sent for https://www.icet.ac.in/
+2025-04-09 13:21:08,365 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\https_www.icet.ac.in__1744185044.png
+2025-04-09 13:23:52,832 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\https_www.icet.ac.in__1744185221.png
+2025-04-09 13:23:57,643 - defacement_detector - ERROR - Error comparing images: The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 0
+2025-04-09 13:24:02,261 - defacement_detector - INFO - Email notification sent for https://www.icet.ac.in/
+2025-04-09 14:04:16,276 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\https_www.icet.ac.in__1744187632.png
+2025-04-09 14:04:20,804 - defacement_detector - ERROR - Error comparing images: The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 0
+2025-04-09 14:04:26,028 - defacement_detector - INFO - Email notification sent for https://www.icet.ac.in/
+2025-04-09 15:07:21,363 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\https_www.icet.ac.in__1744191416.png
+2025-04-09 15:07:25,831 - defacement_detector - ERROR - Error comparing images: The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 0
+2025-04-09 15:07:32,580 - defacement_detector - INFO - Email notification sent for https://www.icet.ac.in/
+2025-04-10 22:16:54,155 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\https_www.icet.ac.in__1744303448.png
+2025-04-10 22:16:59,162 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\https_www.icet.ac.in__1744303600.png
+2025-04-10 22:17:04,159 - defacement_detector - ERROR - Error comparing images: The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 0
+2025-04-10 22:28:17,036 - defacement_detector - INFO - Screenshot saved to defacement_detector_data\screenshots\https_www.icet.ac.in__1744304274.png
+2025-04-10 22:28:21,508 - defacement_detector - ERROR - Error comparing images: The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 0
+2025-04-10 22:28:33,016 - defacement_detector - INFO - Email notification sent for https://www.icet.ac.in/
+2025-04-10 23:08:17,280 - defacement_detector - ERROR - Error capturing screenshot for https://www.icet.ac.in/: HTTPConnectionPool(host='localhost', port=60429): Read timed out. (read timeout=120)
+2025-04-10 23:09:17,038 - defacement_detector - INFO - Email notification sent for https://www.icet.ac.in/
