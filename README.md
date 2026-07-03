@@ -1,155 +1,224 @@
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:ff3333,100:0d1117&height=180&section=header&text=DEFENX&fontSize=70&fontColor=ff3333&animation=fadeIn&fontAlignY=38&desc=Website%20Defacement%20Detection%20%26%20Response%20System&descAlignY=60&descSize=16&descColor=ff6666" width="100%"/>
+</p>
 
-# DEFENX: Website Defacement Detection and Response System
+<div align="center">
 
-## Overview
+[![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
+[![Security](https://img.shields.io/badge/Category-Blue%20Team%20%7C%20Defense-blue?style=for-the-badge&logo=shield&logoColor=white)]()
+[![OWASP](https://img.shields.io/badge/OWASP-A05%3A2021%20Security%20Misconfiguration-red?style=for-the-badge)](https://owasp.org)
 
-This project is a **DEFENX: Website Defacement Detection and Response System** developed using **FastAPI**. 
-It detects any unauthorized modifications (defacement) on a website's content and responds by notifying administrators or taking corrective actions. 
-The system is designed to provide quick detection, automated responses, and detailed reports to ensure the integrity of a website's content.
-
----
-
-## Features
-
-- **Website Content Monitoring**: Continuously monitors the website's content for any unauthorized changes.
-- **FastAPI Integration**: FastAPI framework is used for building the web service and API endpoints.
-- **Defacement Detection**: Detects changes in the website’s content by comparing hashes of previous content with the current state.
-- **Alert System**: Sends email or system notifications to admins when defacement is detected.
-- **Logging**: Keeps logs of website changes and responses for auditing.
-- **Web Extension (if applicable)**: A browser extension is used to interact with the system for ease of access.
+</div>
 
 ---
 
-## Installation
+## 🔍 What is Defenx?
+
+**Defenx** is a real-time **Website Defacement Detection and Automated Response System** built with FastAPI. It continuously monitors websites for unauthorized content modifications — a critical threat vector used by hacktivists and APT groups — and instantly triggers alerts or automated remediation.
+
+> ⚠️ Website defacement is classified under **OWASP Top 10 A05:2021 – Security Misconfiguration** and is a common attack vector following successful initial access.
+
+---
+
+## 🏗️ System Architecture
+
+```
+  ┌─────────────────────────────────────────────────────────────┐
+  │                     DEFENX ARCHITECTURE                     │
+  │                                                             │
+  │   Target Website                                            │
+  │        │                                                    │
+  │        ▼                                                    │
+  │   ┌──────────┐    hash comparison    ┌──────────────────┐   │
+  │   │ Crawler  │ ──────────────────►  │  Hash Store (DB) │   │
+  │   │ Module   │ ◄──────────────────  │  (SQLite)        │   │
+  │   └──────────┘   baseline snapshot  └──────────────────┘   │
+  │        │                                                    │
+  │        │  CHANGE DETECTED                                   │
+  │        ▼                                                    │
+  │   ┌──────────┐                       ┌──────────────────┐   │
+  │   │ Alert    │ ──── SMTP/Webhook ──► │ Admin Dashboard  │   │
+  │   │ Engine   │                       │ (FastAPI UI)     │   │
+  │   └──────────┘                       └──────────────────┘   │
+  │        │                                                    │
+  │        ▼                                                    │
+  │   ┌──────────┐                                              │
+  │   │  Logger  │ ──► Audit Logs & Forensic Evidence          │
+  │   └──────────┘                                              │
+  └─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## ✨ Features
+
+| Feature | Description |
+|---------|-------------|
+| 🔄 **Real-time Monitoring** | Continuously crawls and hashes website content |
+| 🔐 **Hash-based Detection** | SHA-256 comparison between baseline and current state |
+| 📧 **Alert System** | Email (SMTP) + webhook notifications on defacement |
+| 📝 **Audit Logging** | Timestamped logs for forensic investigation |
+| ⚡ **FastAPI Backend** | High-performance async REST API |
+| 🌐 **Browser Extension** | Optional extension for real-time status checks |
+| 🗄️ **SQLite Storage** | Lightweight, embedded log and baseline database |
+
+---
+
+## 🚀 Quick Start
 
 ### Prerequisites
 
-Before you start, ensure you have the following installed:
-- Python 3.8+
-- FastAPI
-- Uvicorn (for running FastAPI)
-- SQLite (or any other database of choice for logging)
-- SMTP service for email notifications (optional)
-- Web Extension (for browser integration)
-
-You can install the required dependencies by running the following command:
-
 ```bash
-pip install -r requirements.txt
+Python 3.8+  |  FastAPI  |  Uvicorn  |  SQLite  |  SMTP (optional)
 ```
 
-### Setting up the Environment
-
-1. Clone the repository to your local machine:
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Aljin-Jayan/Defenx.git
 cd Defenx
 ```
 
-2. Set up your environment variables for configuration:
-   - `DATABASE_URL` (e.g., for SQLite)
-   - `SMTP_SERVER`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASSWORD` (if using email alerts)
-   - `ADMIN_EMAIL` (if using email alerts)
+### 2. Install Dependencies
 
----
+```bash
+pip install -r requirements.txt
+```
 
-## Usage
+### 3. Configure Environment
 
-### Starting the FastAPI Server
+```bash
+# Copy and edit your environment config
+cp .env.example .env
+```
 
-Run the following command to start the server:
+```env
+# .env
+DATABASE_URL=sqlite:///./defenx.db
+SMTP_SERVER=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your@email.com
+SMTP_PASSWORD=your_password
+ADMIN_EMAIL=admin@yourdomain.com
+```
+
+### 4. Launch the Server
 
 ```bash
 uvicorn main:app --reload
 ```
 
-This will start the FastAPI server on `http://127.0.0.1:8000`.
-
-You can then use the provided API endpoints to interact with the system.
-
-### Available API Endpoints
-
-#### 1. **Check Website Status**
-   - **Endpoint**: `GET /status`
-   - **Description**: Returns the current status of the monitoring system (active/inactive).
-   - **Response**:
-     ```json
-     {
-       "status": "active",
-       "last_checked": "2025-05-06T14:30:00"
-     }
-     ```
-
-#### 2. **Monitor Website**
-   - **Endpoint**: `POST /monitor`
-   - **Description**: Starts monitoring a specific website for defacement.
-   - **Request Body**:
-     ```json
-     {
-       "url": "https://example.com"
-     }
-     ```
-   - **Response**:
-     ```json
-     {
-       "message": "Website monitoring started successfully."
-     }
-     ```
-
-#### 3. **Detect Changes**
-   - **Endpoint**: `GET /detect`
-   - **Description**: Checks if there are any defacement changes on a monitored website.
-   - **Response**:
-     ```json
-     {
-       "defacement_detected": true,
-       "details": "Unauthorized content change detected in header section."
-     }
-     ```
+> Server running at `http://127.0.0.1:8000` · API Docs at `http://127.0.0.1:8000/docs`
 
 ---
 
-## Web Extension (If Applicable)
+## 📡 API Reference
 
-### Installation for Browser Extension
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `GET` | `/status` | Get monitoring system status |
+| `POST` | `/monitor` | Register a new website for monitoring |
+| `GET` | `/detect` | Run defacement detection on monitored sites |
+| `GET` | `/logs` | Retrieve audit logs |
+| `DELETE` | `/monitor/{id}` | Remove a website from monitoring |
 
-1. Install the extension from the browser's extension store (if you have made one) or manually load the extension.
-2. The extension allows you to interact with the monitoring system directly through the browser.
-3. You can check the status and start monitoring a website directly through the extension.
-
----
-
-## Logging and Reporting
-
-The system logs all changes, detected defacements, and responses. Logs are stored in a local database or file system for auditing purposes. 
-Use the following command to check logs:
+### Example: Start Monitoring
 
 ```bash
-python logs.py
+curl -X POST http://127.0.0.1:8000/monitor \
+  -H "Content-Type: application/json" \
+  -d '{"url": "https://yourtarget.com"}'
+```
+
+```json
+{
+  "message": "Website monitoring started successfully.",
+  "baseline_hash": "a3f1c9e2b4d7...",
+  "monitored_since": "2025-05-06T10:00:00Z"
+}
+```
+
+### Example: Defacement Detected
+
+```json
+{
+  "defacement_detected": true,
+  "url": "https://yourtarget.com",
+  "details": "Unauthorized content change detected in <body> section.",
+  "severity": "HIGH",
+  "timestamp": "2025-05-06T14:32:01Z"
+}
 ```
 
 ---
 
-## Contributing
+## 🌐 Browser Extension
 
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-name`).
-3. Make changes and commit (`git commit -am 'Add new feature'`).
-4. Push to the branch (`git push origin feature-name`).
-5. Open a pull request.
+The optional browser extension allows direct interaction with Defenx from your browser:
 
----
-
-## License
-
-This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
+1. Load the extension manually via `chrome://extensions` → **Load Unpacked**
+2. Click the Defenx icon to view monitoring status
+3. Trigger detection scans directly from the toolbar
 
 ---
 
-## Acknowledgments
+## 📁 Project Structure
 
-- **FastAPI**: For building the backend and API endpoints.
-- **Uvicorn**: For running the FastAPI server.
-- **SQLite**: For storing logs and monitoring data.
-- **SMTP Server**: For sending email notifications.
+```
+Defenx/
+├── Defenx/
+│   ├── main.py           # FastAPI app entrypoint
+│   ├── monitor.py        # Website crawler & hash engine
+│   ├── alert.py          # Email/webhook alert system
+│   ├── logger.py         # Audit logging module
+│   └── models.py         # Database models
+├── requirements.txt
+├── .env.example
+└── README.md
+```
+
+---
+
+## 🗺️ Roadmap
+
+- [x] Hash-based defacement detection
+- [x] SMTP alert notifications
+- [x] FastAPI REST API
+- [ ] Dashboard UI (React frontend)
+- [ ] Discord/Slack webhook alerts
+- [ ] Scheduled auto-restore (backup-based remediation)
+- [ ] SIEM integration (Splunk/ELK)
+- [ ] Docker containerization
+
+---
+
+## 🤝 Contributing
+
+```bash
+# Fork → Branch → Commit → Push → PR
+git checkout -b feature/your-feature
+git commit -m "feat: describe your change"
+git push origin feature/your-feature
+```
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License** — see [LICENSE](LICENSE) for details.
+
+---
+
+<div align="center">
+
+**Built by [Aljin Jayan](https://github.com/Aljin-Jayan) — OSCP | Offenso Certified Security Professional**
+
+[![GitHub](https://img.shields.io/badge/GitHub-Aljin--Jayan-181717?style=flat-square&logo=github)](https://github.com/Aljin-Jayan)
+
+</div>
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:ff3333,100:0d1117&height=100&section=footer" width="100%"/>
+</p>
